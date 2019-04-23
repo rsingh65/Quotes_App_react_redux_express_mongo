@@ -2,21 +2,21 @@
 import * as types from '../actions/types';
 
 const initialState = {
-    items : [],
-    item : {}
+    posts: [],
+    post:{}
 }
 
 function postsReducer(state = initialState, action){
     switch(action.type){
-        case types.FETCH_POSTS:
+        case types.FETCH_POSTS:       
             return {
                 ...state,
-                items:action.payload
+                posts:[...action.payload]
             };
         case types.NEW_POST :
             return {
                 ...state,
-                item: action.payload
+                posts : [...state.posts,action.payload.post]
             }
         default:
             return state;

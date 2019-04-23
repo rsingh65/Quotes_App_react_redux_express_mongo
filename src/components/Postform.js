@@ -25,7 +25,6 @@ class Postform extends Component {
             title : this.state.title,
             body: this.state.body
         };
-        
         this.props.actions.newPost(post);
     }
     render() {
@@ -34,7 +33,7 @@ class Postform extends Component {
                 <h1>Add User</h1>
                 <form onSubmit={this.onSubmit}>
                     <div>
-                        <label><b>Name : </b></label>
+                        <label><b>Title : </b></label>
                         <input type="text" name="title" onChange={this.onChange}></input>
                         <br></br><br></br>
                         <label><b>Body : </b></label>
@@ -49,7 +48,7 @@ class Postform extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    item : state.posts.item
+    post : state.posts.post
 });
 
 const mapDispatchToProps = dispatch => ({actions: bindActionCreators(postActions,dispatch)});

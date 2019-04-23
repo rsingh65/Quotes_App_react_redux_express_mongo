@@ -9,6 +9,7 @@ class Posts extends Component {
     componentDidMount() {
         this.props.actions.fetchPosts();
     }
+    
     render() {
         const postItems = this.props.posts;
         var postItemsDisplay;
@@ -17,7 +18,7 @@ class Posts extends Component {
         }
         else {
             postItemsDisplay = postItems.map(post => (
-                <div key={post.id}>
+                <div key={post._id}>
                     <h3>{post.title}</h3>
                     <p>{post.body}</p>
                 </div>
@@ -36,11 +37,13 @@ class Posts extends Component {
 
 Posts.prototypes={
     fetchPosts: PropTypes.func.isRequired,
-    posts: PropTypes.array.isRequired
+    posts: PropTypes.array.isRequired,
+    post: PropTypes.object
 }
 
 const mapStateToProps = state => ({
-    posts: state.posts.items
+    posts: state.posts.posts,
+    post:state.posts.post
 })
 
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(postActions, dispatch) });

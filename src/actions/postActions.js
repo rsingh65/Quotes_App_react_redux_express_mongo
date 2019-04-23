@@ -1,21 +1,21 @@
 import * as types from './types';
 
 export function fetchPosts(){
-    console.log("inside fetchPosts");
     return function(dispatch){
-        fetch('https://jsonplaceholder.typicode.com/posts')
+        fetch('http://localhost:3001/api/getPosts')
         .then(res=>res.json())
-        .then(posts=>dispatch({
+        .then(posts=>{
+            console.log(posts.posts);
+            dispatch({
             type : types.FETCH_POSTS,
-            payload:posts
-        }));
+            payload:posts.posts
+        })});
     }
 }
 
 export function newPost(postData){
-    console.log("inside newPost");
     return function(dispatch){
-        fetch('https://jsonplaceholder.typicode.com/posts',{
+        fetch('http://localhost:3001/api/createPost',{
             method: 'POST',
             headers :{
                 'content-type':'application/json'
@@ -23,9 +23,9 @@ export function newPost(postData){
             body: JSON.stringify(postData)
         })
         .then(res=>res.json())
-        .then(newPost=>dispatch({
+        .then(newPost=>{dispatch({
             type: types.NEW_POST,
             payload: newPost
-        }));
+        })});
     }
 }
