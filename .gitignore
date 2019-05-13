@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/home/rohit/reactapps/student_registration_app/node_modules
 
 # testing
 /coverage

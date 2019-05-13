@@ -44,11 +44,11 @@ router.get("/getPosts", (req, res) => {
 // this method adds new data in our database
 router.post("/createPost", (req, res) => {
     let data = new Data();
-    const { title, body } = req.body;
+    const { title, author } = req.body;
 
     //assign all the fields here with data received from the request
     data.title = title;
-    data.body = body;
+    data.author = author;
 
     //save the data on the database by this
     data.save(err => {

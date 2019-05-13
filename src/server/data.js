@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const DataSchema = new Schema(
   {
     title: String,
-    body: String,
+    author: String,
   }
 );
 

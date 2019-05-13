@@ -9,7 +9,7 @@ class Postform extends Component {
 
         this.state={
             title : '',
-            body:''
+            author:''
         }
         this.onSubmit=this.onSubmit.bind(this);
         this.onChange=this.onChange.bind(this);
@@ -23,7 +23,7 @@ class Postform extends Component {
         e.preventDefault();
         const post ={
             title : this.state.title,
-            body: this.state.body
+            author: this.state.author
         };
         this.props.actions.newPost(post);
     }
@@ -34,10 +34,10 @@ class Postform extends Component {
                 <form onSubmit={this.onSubmit}>
                     <div>
                         <label><b>Title : </b></label>
-                        <input type="text" name="title" onChange={this.onChange}></input>
+                        <input style={{marginLeft: "18" + 'px'}} type="text" name="title" onChange={this.onChange}></input>
                         <br></br><br></br>
-                        <label><b>Body : </b></label>
-                        <input type="text" name="body" onChange={this.onChange}></input>
+                        <label><b>Author : </b></label>
+                        <input type="text" name="author" onChange={this.onChange}></input>
                         <br></br><br></br>
                         <button type="submit"><b>Submit</b></button>
                     </div>

@@ -12,17 +12,18 @@ class Posts extends Component {
     
     render() {
         const postItems = this.props.posts;
+        const quoteNumber = 1;
         var postItemsDisplay;
         if (postItems.length <= 0) {
             postItemsDisplay = "No posts to display";
         }
         else {
-            postItemsDisplay = postItems.map(post => (
-                <div key={post._id}>
-                    <h3>{post.title}</h3>
-                    <p>{post.body}</p>
-                </div>
-            ));
+            postItemsDisplay = postItems.map((post,quoteNumber) => {
+                return(<div key={post._id}>
+                    <h3>{quoteNumber + 1}. {post.title}</h3>
+                    <p>-{post.author}</p>
+                </div>)
+            });
         }
         return (
             <div>
