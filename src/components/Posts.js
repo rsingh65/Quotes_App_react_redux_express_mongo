@@ -12,7 +12,6 @@ class Posts extends Component {
     
     render() {
         const postItems = this.props.posts;
-        const quoteNumber = 1;
         var postItemsDisplay;
         if (postItems.length <= 0) {
             postItemsDisplay = "No posts to display";

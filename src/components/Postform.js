@@ -34,7 +34,7 @@ class Postform extends Component {
                 <form onSubmit={this.onSubmit}>
                     <div>
                         <label><b>Title : </b></label>
-                        <input style={{marginLeft: "18" + 'px'}} type="text" name="title" onChange={this.onChange}></input>
+                        <input style={{marginLeft: "18" + "px"}} type="text" name="title" onChange={this.onChange}></input>
                         <br></br><br></br>
                         <label><b>Author : </b></label>
                         <input type="text" name="author" onChange={this.onChange}></input>
